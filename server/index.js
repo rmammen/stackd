@@ -19,7 +19,7 @@ const body = (req, limit = 50_000) => new Promise((ok, fail) => {
   req.on('end', () => { try { ok(JSON.parse(d || '{}')) } catch (e) { fail(e) } })
 })
 const cookie = (req, name) => (req.headers.cookie || '').split(/;\s*/).map(c => c.split('=')).find(([k]) => k === name)?.[1]
-const sessionCookie = (token, maxAge) => `stackd_session=${token}; HttpOnly; SameSite=Lax; Path=/; Max-Age=${maxAge}`
+const sessionCookie = (token, maxAge) => `stackd_session=${token}; HttpOnly; Secure; SameSite=Lax; Path=/; Max-Age=${maxAge}`
 
 // Very small per-IP limiter for sign-in attempts.
 const attempts = new Map()
