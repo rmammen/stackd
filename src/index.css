@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@theme {
+  /* Evergreen: primary actions and selected states */
+  --color-brand-50: #ecf8f3;
+  --color-brand-100: #d2efe3;
+  --color-brand-200: #a6dfc8;
+  --color-brand-300: #6fc8a8;
+  --color-brand-400: #3aab85;
+  --color-brand-500: #1d8f6b;
+  --color-brand-600: #137556;
+  --color-brand-700: #0f6149;
+  --color-brand-800: #0d4e3c;
+  --color-brand-900: #0b3f31;
+  /* Warm amber: highlights, step labels, progress */
+  --color-accent-50: #fff5ec;
+  --color-accent-100: #ffe6d1;
+  --color-accent-200: #fdc9a0;
+  --color-accent-400: #f5a463;
+  --color-accent-500: #ef8a3c;
+  --color-accent-600: #d9702a;
+  --color-accent-700: #b45722;
+  --color-accent-800: #8c431b;
+  /* Ink: header, footer and headings */
+  --color-navy-950: #0c1828;
+  --color-navy-900: #13243a;
+  --color-navy-800: #1d3350;
+  --color-navy-700: #2b4566;
+  --color-paper: #f8f7f3;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@utility card { @apply bg-white rounded-lg border border-slate-200 shadow-[0_1px_2px_rgba(19,36,58,0.04)]; }
+@utility btn { @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer; }
+@utility btn-primary { @apply btn bg-brand-700 text-white hover:bg-brand-800; }
+@utility btn-accent { @apply btn bg-accent-500 text-navy-950 hover:bg-accent-400; }
+@utility btn-dark { @apply btn bg-navy-900 text-white hover:bg-navy-800; }
+@utility btn-ghost { @apply btn border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 hover:border-slate-400; }
+@utility btn-sm { @apply px-3 py-1.5 text-xs; }
+@utility chip { @apply inline-flex items-center gap-1 rounded px-2 py-0.5 text-xs font-medium; }
+@utility input { @apply w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600; }
+@utility label { @apply block text-sm font-medium text-slate-900; }
+@utility h-section { @apply text-xl font-semibold text-navy-900; }
+@utility option { @apply rounded-md border px-3 py-2.5 text-left text-sm transition-colors cursor-pointer; }
+body { font-feature-settings: "cv11", "ss01"; }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+.fade { animation: fade .2s ease-out both; }
+@media print { header, footer, .no-print { display: none !important; } }

@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "stackd", "runtimeExecutable": "/Users/rheamammen/.local/node/bin/node", "runtimeArgs": ["server/index.js"], "port": 8787 }
+  ]
+}
